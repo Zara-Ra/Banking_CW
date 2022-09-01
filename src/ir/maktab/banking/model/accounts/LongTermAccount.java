@@ -4,11 +4,11 @@ import ir.maktab.banking.model.CreditCard;
 
 import java.util.Date;
 
-public class LongTerm extends Account{
+public class LongTermAccount extends Account{
     private double annualProfit;
     private Date yearNumber;
 
-    public LongTerm(String accountNo, CreditCard creditCard,double annualProfit,Date yearNumber) {
+    public LongTermAccount(String accountNo, CreditCard creditCard, double annualProfit, Date yearNumber) {
         super(accountNo, creditCard);
         this.annualProfit=annualProfit;
         this.yearNumber=yearNumber;

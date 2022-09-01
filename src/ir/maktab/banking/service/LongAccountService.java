@@ -2,13 +2,13 @@ package ir.maktab.banking.service;
 
 import ir.maktab.banking.model.Customer;
 
-public class LongerAccountService implements AccountService{
-    Lon
+public class LongAccountService implements AccountService{
+
     @Override
     public boolean withdraw(Customer customer, double amount) {
-
-        if()
-        if(customer.calCustomerBalance() > amount)
+        //if()
+        customer.getLongTermAccount().getYearNumber();
+        customer.getLongTermAccount().getAnnualProfit();
         return false;
     }
 

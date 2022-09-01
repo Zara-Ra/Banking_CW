@@ -4,10 +4,10 @@ import ir.maktab.banking.model.CreditCard;
 
 import java.util.Date;
 
-public class ShortAccount extends Account{
+public class ShortTermAccount extends Account{
     private  double profit;
     private Date date;
-    public ShortAccount(String accountNo, CreditCard creditCard) {
+    public ShortTermAccount(String accountNo, CreditCard creditCard) {
         super(accountNo, creditCard);
     }
 

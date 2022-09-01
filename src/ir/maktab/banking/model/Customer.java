@@ -1,43 +1,77 @@
 package ir.maktab.banking.model;
 
-import ir.maktab.banking.model.accounts.Account;
+import ir.maktab.banking.model.accounts.*;
 
 public class Customer {
     private String name;
-    private Account account;
+    private LongTermAccount longTermAccount;
+    private ShortTermAccount shortTermAccount;
+    private NoProfitAccount noProfitAccount;
+    private CurrentAccount currentAccount;
 
-    public Customer(String name, Account account) {
+    public Customer(String name, CurrentAccount currentAccount) {
         this.name = name;
-        this.account = account;
+        this.currentAccount = currentAccount;
     }
 
-    public Customer(String name) {
+    public Customer(String name, LongTermAccount longTermAccount) {
         this.name = name;
+        this.longTermAccount = longTermAccount;
     }
 
-    public void setName(String name) {
+    public Customer(String name, ShortTermAccount shortTermAccount) {
         this.name = name;
+        this.shortTermAccount = shortTermAccount;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public Customer(String name, NoProfitAccount noProfitAccount) {
+        this.name = name;
+        this.noProfitAccount = noProfitAccount;
     }
 
     public String getName() {
         return name;
     }
 
-    public Account getAccount() {
-        return account;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "\n'Customer Information' " + "Name " + name + account;
+    public LongTermAccount getLongTermAccount() {
+        return longTermAccount;
+    }
+
+    public void setLongTermAccount(LongTermAccount longTermAccount) {
+        this.longTermAccount = longTermAccount;
+    }
+
+    public ShortTermAccount getShortTermAccount() {
+        return shortTermAccount;
+    }
+
+    public void setShortTermAccount(ShortTermAccount shortTermAccount) {
+        this.shortTermAccount = shortTermAccount;
+    }
+
+    public NoProfitAccount getNoProfitAccount() {
+        return noProfitAccount;
+    }
+
+    public void setNoProfitAccount(NoProfitAccount noProfitAccount) {
+        this.noProfitAccount = noProfitAccount;
+    }
+
+    public CurrentAccount getCurrentAccount() {
+        return currentAccount;
+    }
+
+    public void setCurrentAccount(CurrentAccount currentAccount) {
+        this.currentAccount = currentAccount;
     }
 
     public double calCustomerBalance() {
-        return account.getCreditCard().getCredit();
+        //return account.getCreditCard().getCredit();
+        return 0;
     }
 
 }
