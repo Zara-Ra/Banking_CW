@@ -1,5 +1,7 @@
 package ir.maktab.banking.model;
 
+import ir.maktab.banking.model.accounts.Account;
+
 public class Customer {
     private String name;
     private Account account;

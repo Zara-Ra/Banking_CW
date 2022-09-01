@@ -1,4 +1,6 @@
-package ir.maktab.banking.model;
+package ir.maktab.banking.model.accounts;
+
+import ir.maktab.banking.model.CreditCard;
 
 public abstract class Account {
     private String accountNo;
@@ -25,6 +27,4 @@ public abstract class Account {
         this.creditCard = creditCard;
     }
 
-    abstract boolean withdraw(double money);
-    abstract boolean deposit(double money);
 }
