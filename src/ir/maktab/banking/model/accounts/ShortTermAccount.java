@@ -2,12 +2,12 @@ package ir.maktab.banking.model.accounts;
 
 import ir.maktab.banking.model.CreditCard;
 
-import java.util.Date;
+public class ShortTermAccount extends Account {
+    private double profit;
 
-public class ShortTermAccount extends Account{
-    private  double profit;
     //private Date date;
     private int yearNumber;
+
     public ShortTermAccount(String accountNo, CreditCard creditCard) {
         super(accountNo, creditCard);
     }
@@ -20,11 +20,11 @@ public class ShortTermAccount extends Account{
         this.profit = profit;
     }
 
-    public int getDate() {
+    public int getYearNumber() {
         return yearNumber;
     }
 
-    public void setDate(int yearNumber) {
+    public void setYearNumber(int yearNumber) {
         this.yearNumber = yearNumber;
     }
 }

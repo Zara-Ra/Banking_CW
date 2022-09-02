@@ -1,6 +1,6 @@
 package ir.maktab.banking.model;
 
-import ir.maktab.banking.model.accounts.*;
+import ir.maktab.banking.model.accounts.Account;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +49,7 @@ public class Customer {
     }
 
     public Account getAccountFromAccountList(Account account) {
-        account.getAccountNo();
+
         for (int i = 0; i < accountList.size(); i++) {
             if (accountList.get(i).equals(account))
                 return accountList.get(i);
@@ -57,9 +57,10 @@ public class Customer {
         return null;
     }
 
-    public double calCustomerBalance() {
-        //return account.getCreditCard().getCredit();
-        return 0;
+    public double calCustomerBalance(Account account) {
+
+        return getAccountFromAccountList(account).getCreditCard().getCredit();
+
     }
 
 }
