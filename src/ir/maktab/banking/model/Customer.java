@@ -10,30 +10,11 @@ public class Customer {
     private Branch branch;
     private List<Account> accountList = new ArrayList<>();
 
-    public Customer(String name, Account account) {
+    public Customer(String name, Account... account){
         this.name = name;
-        setAccountList(account);
-    }
-
-    public Customer(String name, Account account1, Account account2) {
-        this.name = name;
-        setAccountList(account1);
-        setAccountList(account2);
-    }
-
-    public Customer(String name, Account account1, Account account2, Account account3) {
-        this.name = name;
-        setAccountList(account1);
-        setAccountList(account2);
-        setAccountList(account3);
-    }
-
-    public Customer(String name, Account account1, Account account2, Account account3, Account account4) {
-        this.name = name;
-        setAccountList(account1);
-        setAccountList(account2);
-        setAccountList(account3);
-        setAccountList(account4);
+        for(Account ac : account){
+            setAccountList(ac);
+        }
     }
 
     public String getName() {
@@ -63,4 +44,9 @@ public class Customer {
 
     }
 
+    public void setCustomerBalance(Account account, double amount) {
+
+         getAccountFromAccountList(account).getCreditCard().setCredit(amount);
+
+    }
 }

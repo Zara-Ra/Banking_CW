@@ -6,16 +6,12 @@ import ir.maktab.banking.model.accounts.ShortTermAccount;
 
 public class ShortAccountService implements AccountService {
     @Override
-    public boolean withdraw(Customer customer, Account account, double amount) {
+    public double withdraw(Customer customer, Account account, double amount) {
         ShortTermAccount shortTermAccount = (ShortTermAccount) customer.getAccountFromAccountList(account);
         int yearNumber = shortTermAccount.getYearNumber();
-        if (yearNumber == 0)
-            return true;
-        return false;
-    }
-
-    @Override
-    public boolean deposite(Customer customer, double amount) {
-        return false;
+        double balance = customer.calCustomerBalance(customer.getAccountFromAccountList(account));
+        if (balance > amount && yearNumber == 0)
+            return balance - amount;
+        return -1;
     }
 }

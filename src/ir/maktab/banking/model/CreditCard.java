@@ -18,7 +18,7 @@ public class CreditCard {
             this.cardNumber = cardNumber;
     }
 
-    public void setCredit(int credit) {
+    public void setCredit(double credit) {
         this.credit = credit;
     }
 

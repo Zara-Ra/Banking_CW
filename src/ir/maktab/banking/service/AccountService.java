@@ -4,7 +4,11 @@ import ir.maktab.banking.model.Customer;
 import ir.maktab.banking.model.accounts.Account;
 
 public interface AccountService {
-    boolean withdraw(Customer customer, Account account, double amount);
+    double withdraw(Customer customer, Account account, double amount);
 
-    boolean deposite(Customer customer, double amount);
+    default double deposite(Customer customer,Account account, double amount){
+        double balance = customer.calCustomerBalance(customer.getAccountFromAccountList(account));
+        balance += amount;
+        return balance;
+    }
 }
