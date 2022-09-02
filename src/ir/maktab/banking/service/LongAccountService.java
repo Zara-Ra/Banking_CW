@@ -7,8 +7,8 @@ public class LongAccountService implements AccountService{
     @Override
     public boolean withdraw(Customer customer, double amount) {
         //if()
-        customer.getLongTermAccount().getYearNumber();
-        customer.getLongTermAccount().getAnnualProfit();
+       // customer.getLongTermAccount().getYearNumber();
+        //customer.getLongTermAccount().getAnnualProfit();
         return false;
     }
 

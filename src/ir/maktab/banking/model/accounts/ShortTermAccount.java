@@ -6,7 +6,8 @@ import java.util.Date;
 
 public class ShortTermAccount extends Account{
     private  double profit;
-    private Date date;
+    //private Date date;
+    private int yearNumber;
     public ShortTermAccount(String accountNo, CreditCard creditCard) {
         super(accountNo, creditCard);
     }
@@ -19,11 +20,11 @@ public class ShortTermAccount extends Account{
         this.profit = profit;
     }
 
-    public Date getDate() {
-        return date;
+    public int getDate() {
+        return yearNumber;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(int yearNumber) {
+        this.yearNumber = yearNumber;
     }
 }
