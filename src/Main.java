@@ -12,21 +12,27 @@ public class Main {
         LongTermAccount longTermAccount = new LongTermAccount("100002111092876000002243", creditCard, 0.14, 5);
 
         Customer customer = new Customer("Zahra Rahimi", currentAccount, longTermAccount);
-        //sample of withdraw
+
         Account ac = customer.getAccountFromAccountList(currentAccount);
-        AccountService as;
-        if (ac instanceof CurrentAccount) {
-            as = new CurrentAccountService();
-            //if( as.withdraw(customer,ac,100))
-        } else if (ac instanceof LongTermAccount) {
-            as = new LongAccountService();
-        } else if (ac instanceof ShortTermAccount) {
-            as = new ShortAccountService();
-        } else if (ac instanceof NoProfitAccount) {
-            as = new NoProfitAccountService();
-        } else
-            as = null;
-        if (as != null)
-            as.withdraw(customer, ac, 100);
-    }
+        withdraw(customer,ac);
+        }
+        public static void withdraw(Customer customer,Account ac){
+            AccountService as;
+            if (ac instanceof CurrentAccount)
+                as = new CurrentAccountService();
+            else if (ac instanceof LongTermAccount)
+                as = new LongAccountService();
+            else if (ac instanceof ShortTermAccount)
+                as = new ShortAccountService();
+            else if (ac instanceof NoProfitAccount)
+                as = new NoProfitAccountService();
+            else
+                as = null;
+            if (as != null && as.withdraw(customer, ac, 100))
+                System.out.println("withdraw from account number "+ac.getAccountNo()+" was successfully done");
+
+            else
+                System.out.println("withdraw failed");
+        }
+        public static void deposit(Customer customer,Account account){}
 }
