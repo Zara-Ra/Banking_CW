@@ -11,16 +11,30 @@ public class Main {
 
     public static void main(String[] args) {
         CreditCard creditCard = new CreditCard("6362141092542787", 100);
+
         CurrentAccount currentAccount = new CurrentAccount("100002111092876000001113", creditCard, "check1");
+        currentAccount.setAccountService(new CurrentAccountService());
+
         LongTermAccount longTermAccount = new LongTermAccount("100002111092876000002243", creditCard, 0.14, 5);
+        longTermAccount.setAccountService(new LongAccountService());
 
         customer = new Customer("Zahra Rahimi", currentAccount, longTermAccount);
 
         Account ac = customer.getAccountFromAccountList(currentAccount);
 
-        castAccountService(ac);
+        double withdraw = ac.withdraw(customer, 10);
+        if( withdraw > 0) {
+            customer.setCustomerBalance(ac, withdraw);
+            System.out.println(customer.calCustomerBalance(ac));
+        }
+        double deposit = ac.deposit(customer, 50);
+        if(deposit > 0) {
+            customer.setCustomerBalance(ac, deposit);
+            System.out.println(customer.calCustomerBalance(ac));
+        }
+        //castAccountService(ac);
         //withdraw(ac);
-        deposit(ac);
+       // deposit(ac);
     }
 
     public static void deposit(Account account) {
